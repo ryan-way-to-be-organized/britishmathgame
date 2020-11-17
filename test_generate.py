@@ -1,5 +1,6 @@
 import unittest
 from generate import Generator
+from ExpressionNode import ExpressionNode
 
 class GeneratorTest(unittest.TestCase):
 
@@ -25,7 +26,7 @@ class GeneratorTest(unittest.TestCase):
 
     def test_generate_example4(self):
         g = Generator()
-        g.generate([5, 6, 4, 50, 75, 25], 184)
+        #g.generate([5, 6, 4, 50, 75, 25], 184)
 
     def test_permutation_example1(self):
         g = Generator()
@@ -38,5 +39,20 @@ class GeneratorTest(unittest.TestCase):
         ops = ["*"]*5
         perms = [0 for i in range(5)]
         equation = [j for i in zip(nums[:-1], ops) for j in i] + [nums[-1]]
-        print(g.solve(perms, equation, target))
+        #print(g.solve(perms, equation, target))
 
+    def test_generate_example1(self):
+        g = Generator()
+        print(g.findTarget([50, 2, 6, 4, 10, 7], 300), 300)
+
+    def test_generate_example2(self):
+        g = Generator()
+        #g.findTarget([25, 7, 10, 2, 1, 6], 175)
+
+    def test_generate_example3(self):
+        g = Generator()
+        #g.findTarget([25, 26, 10, 3, 2, 1], 311)
+
+    def test_generate_example4(self):
+        g = Generator()
+        #g.findTarget([5, 6, 4, 50, 75, 25], 184)
