@@ -1,6 +1,6 @@
 import unittest
 from generate import Generator
-from ExpressionNode import ExpressionNode
+from expressionNode import ExpressionNode
 
 class GeneratorTest(unittest.TestCase):
 
@@ -15,15 +15,6 @@ class GeneratorTest(unittest.TestCase):
     def test_permutation_example1(self):
         g = Generator()
         self.assertTrue(any((i[0] == "*") for i in g.getOperatorSet()))
-
-    def test_solve_example1(self):
-        g = Generator()
-        nums = [ 50, 6, 4, 10, 7 ]
-        target = 300
-        ops = ["*"]*5
-        perms = [0 for i in range(5)]
-        equation = [j for i in zip(nums[:-1], ops) for j in i] + [nums[-1]]
-        #print(g.solve(perms, equation, target))
 
     def test_generate_example1(self):
         g = Generator()

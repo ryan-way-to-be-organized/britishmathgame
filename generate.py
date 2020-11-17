@@ -1,6 +1,6 @@
 import sys
 import itertools
-from ExpressionNode import ExpressionNode
+from expressionNode import ExpressionNode
 
 class Generator:
 

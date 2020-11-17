@@ -1,5 +1,5 @@
 import unittest
-from ExpressionNode import ExpressionNode
+from expressionNode import ExpressionNode
 
 class ExpressionNodeTest(unittest.TestCase):
 
