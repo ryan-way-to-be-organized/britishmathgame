@@ -47,12 +47,12 @@ class GeneratorTest(unittest.TestCase):
 
     def test_generate_example2(self):
         g = Generator()
-        #g.findTarget([25, 7, 10, 2, 1, 6], 175)
+        print(g.findTarget([25, 7, 10, 2, 1, 6], 175), 175)
 
     def test_generate_example3(self):
         g = Generator()
-        #g.findTarget([25, 26, 10, 3, 2, 1], 311)
+        print(g.findTarget([25, 26, 10, 3, 2, 1], 311), 311)
 
     def test_generate_example4(self):
         g = Generator()
-        #g.findTarget([5, 6, 4, 50, 75, 25], 184)
+        print(g.findTarget([5, 6, 4, 50, 75, 25], 184), 184)
