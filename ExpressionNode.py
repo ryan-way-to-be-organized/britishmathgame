@@ -22,11 +22,22 @@ class ExpressionNode:
     def __str__(self):
         if self.operator is None:
             return str(self.value)
+
+        ret = ""
+
+        if self.lhs.operator is None:
+            ret += self.lhs.__str__()
         else:
-            return (
-                "(" + self.lhs.__str__() + ")" + self.operator + 
-                "(" + self.rhs.__str__() + ")"
-            )
+            ret += "(" + self.lhs.__str__() + ")"
+
+        ret += self.operator
+
+        if self.rhs.operator is None:
+            ret += self.rhs.__str__()
+        else:
+            ret += "(" + self.rhs.__str__() + ")"
+
+        return ret
 
     def __repr__(self):
         return self.__str__()
