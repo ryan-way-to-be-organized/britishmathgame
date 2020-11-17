@@ -23,13 +23,12 @@ class ExpressionNode:
         if self.operator is None:
             return str(self.value)
 
-        l_string = ("%s" if self.lhs.operator is None else "(%s)") % self.lhs
-        r_string = ("%s" if self.rhs.operator is None else "(%s)") % self.rhs
+        return "(%s%s%s)" % (
+                    (self.rhs, self.operator[0], self.lhs) 
+                    if self.operator == "-r" or self.operator == "-/" else
+                    (self.lhs, self.operator, self.rhs)
+                )
 
-        if self.operator == "-r" or self.operator == "r/":
-            return r_string + self.operator[0] + l_string
-        else:
-            return l_string + self.operator + r_string
 
 
     def __repr__(self):
