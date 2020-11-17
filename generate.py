@@ -1,3 +1,4 @@
+import sys
 import itertools
 from ExpressionNode import ExpressionNode
 
@@ -24,3 +25,15 @@ class Generator:
                     if node.eval() == target:
                         return node
         return None
+
+if __name__ == "__main__":
+    if len(sys.argv) != 8:
+        print("7 Arguments Required")
+        sys.exit(1)
+
+    nums = [int(sys.argv[i]) for i in range(1, 7)]
+    target = int(sys.argv[-1])
+
+    g = Generator()
+    print(str(g.findTarget(nums, target)) + "=" + str(target))
+
